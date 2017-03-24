@@ -1,5 +1,9 @@
-<h1> ALBUM </h1>
-<h2> Category </h2>
+{% extends 'base.html' %}
+{% block section %}
+<h2>Category</h2>
+<hr>
+{% endblock section %}
+{% block maincontent %}
 <div>
 	{% for c in object_list %}
 	<a href="{% url 'category-detail' c.pk%}">
@@ -7,3 +11,13 @@
 	</a><br>
 	{% endfor %}
 </div>
+{% endblock maincontent %}
+<!--<h1> ALBUM </h1>
+<h2> Category </h2>
+<div>
+	{% for c in object_list %}
+		<a href="{% url 'category-detail' c.pk%}">
+			{{c.name}}
+		</a><br>
+	{% endfor %}
+</div>-->
